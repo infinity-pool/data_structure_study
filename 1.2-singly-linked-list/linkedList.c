@@ -25,8 +25,7 @@ void SLL_DestroyAllNodes(Node** head) {
 void SLL_AppendNode(Node** head, Node* newNode) {
     if (*head == NULL) {
         *head = newNode;
-    }
-    else {
+    } else {
         Node* tail = (*head);
         while (tail->nextNode != NULL) {
             tail = tail->nextNode;
@@ -44,8 +43,7 @@ void SLL_InsertBefore(Node** head, Node* current, Node* newNode) {
     if (*head == current) {
         newNode->nextNode = *head;
         *head = newNode;
-    }
-    else {
+    } else {
         Node* tmpNode = *head;
         while (tmpNode->nextNode != current) {
             tmpNode = tmpNode->nextNode;
@@ -58,8 +56,7 @@ void SLL_InsertBefore(Node** head, Node* current, Node* newNode) {
 void SLL_InsertNewHead(Node** head, Node* newHead) {
     if (*head == NULL) {
         *head = newHead;
-    }
-    else {
+    } else {
         newHead->nextNode = *head;
         *head = newHead;
     }
@@ -68,8 +65,7 @@ void SLL_InsertNewHead(Node** head, Node* newHead) {
 void SLL_RemoveNode(Node** head, Node* removeNode) {
     if (*head == removeNode) {
         *head = removeNode->nextNode;
-    }
-    else {
+    } else {
         Node* current = *head;
         while (current != NULL && current->nextNode != removeNode) {
             current = current->nextNode;
@@ -82,8 +78,7 @@ void SLL_RemoveNode(Node** head, Node* removeNode) {
 
 Node* SLL_GetNodeAt(Node* head, int index) {
     Node* current = head;
-    // while (current != NULL && (index--) > 0) {
-    while (current != NULL && (--index) >= 0) {
+    while (current != NULL && (index--) > 0) {
         current = current->nextNode;
     }
     return current;
