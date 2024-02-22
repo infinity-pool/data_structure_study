@@ -31,6 +31,8 @@ int main() {
         printf("List[%d]: %d\n", i, curr->data);
     }
 
+    PrintReverse(doublyLinkedList);
+
     printf("\nDestroying List...\n");
     count = DLL_GetNodeCount(doublyLinkedList);
     for (int i = 0; i < count; i++) {

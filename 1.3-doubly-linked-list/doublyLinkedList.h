@@ -19,6 +19,7 @@ void DLL_InsertAfter(Node* current, Node* newNode);
 void DLL_RemoveNode(Node** head, Node* removeNode);
 Node* DLL_GetNodeAt(Node* head, int index);
 int DLL_GetNodeCount(Node* head);
-void printNode(Node* node);
+void PrintNode(Node* node);
+void PrintReverse(Node* head);
 
 #endif

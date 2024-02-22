@@ -71,7 +71,11 @@ int DLL_GetNodeCount(Node* head) {
     return count;
 }
 
-void printNode(Node* node) {
+void PrintNode(Node* node) {
+    if (node == NULL) {
+        printf("NULL Node!\n");
+        return;
+    }
     if (node->prevNode == NULL)
         printf("Prev: NULL ");
     else
@@ -81,4 +85,19 @@ void printNode(Node* node) {
         printf("Next: NULL\n");
     else
         printf("Next: %d\n", node->nextNode->data);
+}
+
+void PrintReverse(Node* head) {
+    Node* tail = head;
+    int count = 0;
+    while (tail->nextNode != NULL) {
+        count++;
+        tail = tail->nextNode;
+    }
+    Node* curr = tail;
+    printf("\nPrint doubly linked list reversely!\n");
+    while (curr != NULL) {
+        printf("List[%d]: %d\n", count--, curr->data);
+        curr = curr->prevNode;
+    }
 }
